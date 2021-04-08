@@ -11,8 +11,24 @@
  * For ([1, 2, 3], 2) should return 1
  *
  */
-function findIndex(/* array, value */) {
-  throw new Error('Not implemented');
+function findIndex(array, value) {
+  let first = 0;
+  let last = array.length - 1;
+  let mid = Math.ceil(array.length / 2);
+  let numberMid = array[mid];
+  while (first <= last) {
+    mid = last + first;
+    numberMid = array[mid];
+    if (value === numberMid) {
+      return mid;
+    }
+    if (value > numberMid) {
+      first = mid + 1;
+    } else {
+      last = mid - 1;
+    }
+  }
+  return 'fdgfg';
 }
 
 module.exports = findIndex;
